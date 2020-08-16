@@ -1,0 +1,513 @@
+@import '../node_modules/normalize.css/normalize.css';
+@import 'reset.css';
+@import 'screen-size.scss';
+@import 'colors.scss';
+@import 'typography.scss';
+
+.btn--green {
+  padding: 10px 23px;
+  color: $color-btn-work;
+  border: 2px solid $color-btn-work;
+  border-radius: 3px;
+  background-color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-btn-work;
+  }
+
+  @media screen and (max-width: $screen-size-m) {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
+
+.header {
+  width: 100%;
+  padding-bottom: 30px;
+
+  &__container {
+    height: 44px;
+
+    &--blue {
+      background-color: $color-elem-main;
+    }
+
+    &--grey {
+      background-color: $color-header;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1366px;
+  box-sizing: border-box;
+  padding: 0 33px;
+  margin: 0 auto;
+  font-family: $font-roboto;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $color-text;
+
+  @media screen and (max-width: $screen-size-m) {
+    padding: 0 10px;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+  padding-top: 2px;
+}
+
+.breadcrumb {
+  display: flex;
+  font-size: 12px;
+  line-height: 16px;
+
+  &__item {
+
+    &::after {
+      content: '/';
+      padding-right: 3px;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+
+    &:last-child .breadcrumb__link {
+      color: $color-text;
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    color: $color-text-breadcrumbs;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: $screen-size-m) {
+    flex-direction: column;
+  }
+}
+
+.search-company {
+  position: relative;
+  max-width: 944px;
+  margin: 14px 0 31px -2px;
+
+  &__input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 80px 10px 12px;
+    border: 2px solid $color-elem-main;
+    border-radius: 3px;
+    outline: none;
+
+    &::placeholder {
+      color: $color-text-small;
+    }
+  }
+  
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 66px;
+    height: 44px;
+    background: url(images/icons/icon-search.svg) $color-elem-main no-repeat 50%;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media screen and (max-width: $screen-size-l) {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: $screen-size-m) {
+    margin-right: 10px;
+  }
+}
+
+.back-to-catalog {
+  margin-bottom: 22px;
+
+  &__icon {
+    padding-left: 4px;
+  }
+
+  &__link {
+    padding-left: 4px;
+    color: $color-elem-main;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.company {
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 24px;
+    font-weight: 500;
+    color: $color-text-title;
+
+    @media screen and (max-width: $screen-size-m) {
+      font-size: 18px;
+    }
+  }
+
+  &--verified {
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      margin-left: 2px;
+      background: url(images/icons/icon-check-mark.svg);
+      vertical-align: top;
+    }
+  }
+
+  &__feedback {
+    display: flex;
+    align-items: center;
+    margin-bottom: 31px;
+
+    @media screen and (max-width: $screen-size-m) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn-work {
+    margin-left: auto;
+    margin-right: 20px;
+
+    @media screen and (max-width: $screen-size-m) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @media screen and (max-width: $screen-size-l) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__production {
+    flex: 1 1 auto;
+    padding-right: 20px;
+  }
+
+  &__info {
+    flex: 0 0 360px;
+    padding-right: 20px;
+
+    @media screen and (max-width: $screen-size-m) {
+      padding-right: 0;
+    }
+  }
+
+  &__logo {
+    width: 180px;
+    height: auto;
+
+    @media screen and (max-width: $screen-size-l) {
+      width: 120px;
+    }
+  }
+}
+
+.company-details {
+  padding: 17px 16px 8px;
+  margin: 10px 0;
+  background-color: $color-background-darker;
+
+  &__text {
+    margin-bottom: 8px;
+  }
+  
+  &__title {
+    font-weight: 700;
+  }
+
+  &__list-item {
+    line-height: 20px;
+  
+    &::before {
+      content: '\2011';
+      padding-right: 8px;
+    }
+  }
+}
+
+.company-views {
+  margin-right: 25px;
+
+  &__icon {
+    margin: 0 1px;
+  }
+
+  &__link {
+    color: $color-text-small;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  @media screen and (max-width: $screen-size-m) {
+    margin-bottom: 5px;
+  }
+}
+
+.company-add-review {
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
+  &__link {
+    color: $color-text-small;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  @media screen and (max-width: $screen-size-m) {
+    margin-bottom: 5px;
+  }
+}
+
+.ad-last {
+  width: 100%;
+  margin-bottom: 48px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $color-text;
+  text-align: left;
+
+  &__title {
+    padding-bottom: 7px;
+    margin-bottom: 16px;
+    color: $color-text-title;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 28px;
+    border-bottom: 1px solid $color-table-border;
+    text-align: left;
+  }
+
+  &__thead {
+    background-color: $color-background-darker;
+  }
+
+  &__td {
+    padding: 8px;
+    vertical-align: middle;
+
+    &:nth-child(n+3):nth-child(-n+4) {
+      text-align: right;
+
+      @media screen and (max-width: $screen-size-m) {
+        display: none;
+      }
+    }
+
+    &:first-child {
+      @media screen and (max-width: $screen-size-m) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $screen-size-m) {
+      padding: 4px;
+    }
+  }
+
+  &__icon-views {
+    display: inline-block;
+    width: 14px;
+    height: 8px;
+    background-image: url(images/icons/icon-ad-last-views.svg);
+  }
+
+  &__text .ad-last__target {
+    @media screen and (min-width: $screen-size-m) {
+      display: none;
+    }
+  }
+
+  &__tbody-td {
+    border-bottom: 1px solid $color-table-border;
+  }
+
+  &__target {
+    display: inline-block;
+    width: 60px;
+    margin-left: 8px;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    border-radius: 3px;
+
+    &--sale {
+      background-color: $color-btn-sale;
+    }
+
+    &--buy {
+      background-color: $color-btn-buy;
+    }
+
+    @media screen and (max-width: $screen-size-l) {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    color: $color-text-link;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (width: $screen-size-s) {
+    width: 300px;
+  }
+}
+
+.ad-last-thead {
+  &__target {
+    width: 10%;
+  }
+
+  &__text {
+    width: 40%;
+  }
+
+  &__date {
+    width: 10%;
+    min-width: 40px;
+  }
+
+  &__views {
+    width: 10%;
+  }
+
+  &__author{
+    width: 30%;
+  }
+}
+
+.ad-last-author {
+  display: flex;
+  align-items: center;
+
+  &__photo {
+    height: 39px;
+    padding-right: 8px;
+  }
+
+  &__info {
+    max-width: 180px;
+  }
+
+  &__name {
+    color: $color-text-link;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__work {
+    max-width: 176px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media screen and (max-width: $screen-size-m) {
+      white-space: normal;
+    }
+  }
+}
+
+.photo-products {
+  font-size: 0;
+
+  &__title {
+    padding-bottom: 7px;
+    margin-bottom: 16px;
+    color: $color-text-title;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 28px;
+    border-bottom: 1px solid $color-table-border;
+    text-align: left;
+  }
+
+  &__item {
+    width: auto;
+    height: 120px;
+    margin-right: 8px;
+  }
+}
+
+.promo {
+  flex: 0 0 160px;
+
+  @media screen and (max-width: $screen-size-m) {
+    display: none;
+  }
+}
+
+.promo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 320px;
+  margin-bottom: 20px;
+  background-color: $color-background-promo;
+
+  &__title {
+    font-size: 20px;
+    line-height: 30px;
+    color: $color-text-small;
+  }
+}
